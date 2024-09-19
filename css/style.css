@@ -895,6 +895,36 @@ ul.dropdown-menu li {
   }
 }
 
+.slider-about {
+  background: url('../images/kidsTugOfWar.jpeg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center; /* Default background position */
+  padding: 30vh 0;
+  position: relative;
+}
+
+/* Reduced padding and changed background position and size for viewports up to 992px wide */
+@media (max-width: 992px) {
+  .slider-about {
+    padding: 15vh 0;
+  }
+}
+
+/* Further changes for viewports up to 768px wide */
+@media (max-width: 768px) {
+  .slider-about {
+    padding: 13vh 0;
+    background-attachment: scroll; /* Disable fixed background for iOS */
+    background-size: auto 80%;
+    background-position: 55% 140%;
+  }
+  .about.section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
 .slider .block {
   color: #E3E3E4;
   text-align: center;
