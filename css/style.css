@@ -2064,7 +2064,8 @@ ul.dropdown-menu li {
 }
 
 .btn-instagram-page:hover {
-  background: linear-gradient(45deg, #fd1d1d, #fcb045, #833ab4);
+  background: linear-gradient(45deg, #ff1010, #ff9500, #7525aa);
+  color: white;
 }
 
 .btn-instagram-page i {
