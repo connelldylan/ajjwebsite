@@ -31,6 +31,36 @@
   <!--Font Awesome (For Facebook and Instagram Icons)-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+  <style>
+    .matches {
+      text-align: center;
+      border: 2px solid #000; /* Black border */
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9; /* Light grey background */
+      width: 100%; /* Default width */
+      max-width: 600px; /* Maximum width */
+      margin: 10vh auto; /* Center horizontally and add top margin */
+    }
+    .match-title {
+      font-size: 28px; /* Increase font size */
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .match-data {
+      font-size: 24px; /* Increase font size */
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .matches {
+        width: 90%; /* Adjust width for smaller screens */
+      }
+      .match-title, .match-data {
+        font-size: 22px; /* Adjust font size for smaller screens */
+      }
+    }
+  </style>
+
 </head>
 
 <body id="body">
@@ -135,6 +165,54 @@
     </div>
   </div>
 </section>
+
+<section class="matches">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-subtitle" style="text-align: center;">Match Status</h2>
+        <div id="current-match" class="match-status">
+          <h3 class="match-title">Current Match:</h3>
+          <p id="current-match-data" class="match-data"></p>
+        </div>
+        <div id="on-deck" class="match-status">
+          <h3 class="match-title">On Deck:</h3>
+          <p id="on-deck-data" class="match-data"></p>
+        </div>
+        <div id="in-the-hole" class="match-status">
+          <h3 class="match-title">In the Hole:</h3>
+          <p id="in-the-hole-data" class="match-data"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Function to fetch data from Google Sheets
+  async function fetchMatchData() {
+    const apiKey = 'AIzaSyDmIpI9B5bVHWpOqVo4BDTVpMBWEeghyeA';
+    const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
+    const range = 'Sheet1!A3:C3'; // Adjust the range as needed
+
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const values = data.values[0];
+
+      document.getElementById('current-match-data').innerText = values[0];
+      document.getElementById('on-deck-data').innerText = values[1];
+      document.getElementById('in-the-hole-data').innerText = values[2];
+    } catch (error) {
+      console.error('Error fetching data from Google Sheets:', error);
+    }
+  }
+
+  // Call the function to fetch and display match data
+  fetchMatchData();
+</script>
 
 <footer class="footer">
 	<div class="container">
