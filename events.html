@@ -18,61 +18,82 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
-    .matches {
-      text-align: center;
-      border: 2px solid #000; /* Black border */
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f9f9f9; /* Light grey background */
-      width: 45%; /* Default width */
-      max-width: 600px; /* Maximum width */
-      margin: 10vh auto; /* Center horizontally and add top margin */
-      display: inline-block;
-      vertical-align: top;
-      float: left;
-    }
-    .rankings {
-      text-align: left;
-      border: 2px solid #000; /* Black border */
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f9f9f9; /* Light grey background */
-      width: 45%; /* Default width */
-      max-width: 600px; /* Maximum width */
-      margin: 10vh auto; /* Center horizontally and add top margin */
-      display: inline-block;
-      vertical-align: top;
-      float: right;
-    }
-    .match-title, .ranking-title {
-      font-size: 28px; /* Increase font size */
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .match-data, .ranking-data {
-      font-size: 24px; /* Increase font size */
-      margin-bottom: 20px;
-    }
-    .ranking-status {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .matches, .rankings {
-        width: 90%; /* Adjust width for smaller screens */
-        display: block;
-        margin: 20px auto; /* Add margin between sections */
-        float: none; /* Disable float for smaller screens */
-      }
-      .match-title, .match-data, .ranking-title, .ranking-data {
-        font-size: 22px; /* Adjust font size for smaller screens */
-      }
-      .ranking-status {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    .center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rankings, .matches {
+  border: 2px solid #000; /* Black border */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9; /* Light grey background */
+  width: 90%; /* Default width */
+  max-width: 600px; /* Maximum width */
+  margin: 20px auto; /* Center horizontally and add top margin */
+}
+
+.rankings {
+  text-align: center;
+}
+
+.match-title, .ranking-title {
+  font-size: 28px; /* Increase font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.match-data, .ranking-data {
+  font-size: 24px; /* Increase font size */
+  margin-bottom: 20px;
+}
+
+.ranking-status {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ranking-item {
+  width: 45%;
+}
+
+.centered-image {
+  display: flex;
+  justify-content: center;
+    margin: 20px auto;
+}
+
+.centered-image .col-md-6 {
+  max-width: 600px; /* Ensure the image container has the same maximum width */
+  width: 100%; /* Ensure the image container takes full width */
+}
+
+.img-fluid.alt-img {
+  width: 100%; /* Ensure the image takes full width of the container */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .matches, .rankings {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 20px auto; /* Add margin between sections */
+  }
+  .match-title, .match-data, .ranking-title, .ranking-data {
+    font-size: 22px; /* Adjust font size for smaller screens */
+  }
+  .ranking-status {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ranking-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
   </style>
 </head>
 <body id="body">
@@ -119,38 +140,64 @@
       </div>
     </div>
   </header>
+
   <section class="about section" style="margin-top: 10vh;">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h2 class="section-subtitle" style="text-align: center;">Upcoming Events:</h2>
-          <h3 style="font-weight:bold; margin-bottom: 20px; font-size: 25px;">No-Gi Eagle Open Tournament!</h3>
+          <h3 style="font-weight:bold; margin-bottom: 20px; font-size: 25px;">No-Gi White Belt Tournament!</h3>
           <h3 style="font-weight:bold; margin-bottom: 10px; font-size: 25px;">
-            <span style="background-color: rgb(255, 55, 0);">$500 Cash Prize!</span>
+            <span style="background-color: rgb(255, 55, 0);">$100 Cash Prize!</span>
           </h3>
-          <h3 style="font-weight:bold; margin-bottom: 0px;">Saturday, Feburary 1st, 2025</h3>
+          <h3 style="font-weight:bold; margin-bottom: 0px;">Sunday, May 4th, 2025</h3>
           <h3 style="margin-bottom: 3px">Doors Open at 8:00 am</h3>
           <h3 style="margin-bottom: 20px">Fights Start at 9:00 am</h3>
-          <h3 style="font-weight:bold; margin-bottom: 20px;">$50 Tournament Registration Fee</h3>
+          <h3 style="font-weight:bold; margin-bottom: 20px;">$25 Tournament Registration Fee</h3>
           <h3 style="font-weight:bold; margin-bottom: 20px;">$10 for Visitors</h3>
           <h3 style="font-weight:bold; margin-bottom: 20px;">Submission Only - 10 Minute Match with 5 minute Overtime</h3>
           <h3 style="font-weight:bold; margin-bottom: 20px;">Championship Match has No Time Limit</h3>
-          <h3 style="font-weight:bold; margin-bottom: 0px;">Superfights!</h3>
-          <h3 style="margin-bottom: 20px">
-            There will also be superfights in-between the tournament matches. If interested in a superfight, please Direct Message @lacrosseamericanjiujitsu on Instagram and indicate you are interested in having a superfight. Registration for a superfight is $25 and the winner will receive a prize.
-          </h3>
+          <h3 style="font-weight:bold; margin-bottom: 0px;">Two Divisions:</h3>
+          <h3 style="margin-bottom: 0px;">175+</h3>
+          <h3 style="margin-bottom: 20px;">175-</h3>
           <h3 style="font-weight:bold; margin-bottom: 5px;">To Register for the tournament, Direct Message @lacrosseamericanjiujitsu on Instagram</h3>
           <a class="about btn btn-instagram-page" href="https://www.instagram.com/lacrosseamericanjiujitsu/" target="_blank" style="margin-bottom: 20px;">
             <i class="fab fa-instagram"></i> @lacrosseamericanjiujitsu
           </a>
         </div>
         <div class="col-md-6">
-          <img src="images/tournament_Feb1.jpg" alt="Eagle Open Tournament" class="img-fluid alt-img">
+          <img src="images/white_belt_tourney.jpg" alt="Eagle Open Tournament" class="img-fluid alt-img">
         </div>
       </div>
     </div>
   </section>
+
+<div class="centered-image">
+  <div class="col-md-6">
+    <img src="images/dualmeet.png" alt="Eagle Open Tournament" class="img-fluid alt-img">
+  </div>
+</div>
+
   <div class="center-container">
+    <section class="rankings">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-subtitle" style="text-align: center;">Team Points</h2>
+            <div class="row justify-content-center">
+              <div id="ranking-1" class="ranking-status col-md-6">
+                <h3 class="ranking-title">UWL</h3>
+                <p id="ranking-1-points" class="ranking-data"></p>
+              </div>
+              <div id="ranking-2" class="ranking-status col-md-6">
+                <h3 class="ranking-title">UWW</h3>
+                <p id="ranking-2-points" class="ranking-data"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="matches">
       <div class="container">
         <div class="row">
@@ -167,45 +214,6 @@
             <div id="in-the-hole" class="match-status">
               <h3 class="match-title">In the Hole:</h3>
               <p id="in-the-hole-data" class="match-data"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="rankings">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="section-subtitle" style="text-align: center;">Fighter Rankings</h2>
-            <div id="ranking-1" class="ranking-status">
-              <h3 class="ranking-title">1.</h3>
-              <p id="ranking-1-name" class="ranking-data"></p>
-              <p id="ranking-1-points" class="ranking-data"></p>
-            </div>
-            <div id="ranking-2" class="ranking-status">
-              <h3 class="ranking-title">2.</h3>
-              <p id="ranking-2-name" class="ranking-data"></p>
-              <p id="ranking-2-points" class="ranking-data"></p>
-            </div>
-            <div id="ranking-3" class="ranking-status">
-              <h3 class="ranking-title">3.</h3>
-              <p id="ranking-3-name" class="ranking-data"></p>
-              <p id="ranking-3-points" class="ranking-data"></p>
-            </div>
-            <div id="ranking-4" class="ranking-status">
-              <h3 class="ranking-title">4.</h3>
-              <p id="ranking-4-name" class="ranking-data"></p>
-              <p id="ranking-4-points" class="ranking-data"></p>
-            </div>
-            <div id="ranking-5" class="ranking-status">
-              <h3 class="ranking-title">5.</h3>
-              <p id="ranking-5-name" class="ranking-data"></p>
-              <p id="ranking-5-points" class="ranking-data"></p>
-            </div>
-            <div id="ranking-6" class="ranking-status">
-              <h3 class="ranking-title">6.</h3>
-              <p id="ranking-6-name" class="ranking-data"></p>
-              <p id="ranking-6-points" class="ranking-data"></p>
             </div>
           </div>
         </div>
@@ -253,7 +261,6 @@
         const data = await response.json();
         const values = data.values;
         for (let i = 0; i < values.length; i++) {
-          document.getElementById(`ranking-${i+1}-name`).innerText = values[i][0];
           document.getElementById(`ranking-${i+1}-points`).innerText = values[i][1];
         }
       } catch (error) {
