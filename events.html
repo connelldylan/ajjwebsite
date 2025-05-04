@@ -19,81 +19,81 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
     .center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.rankings, .matches {
-  border: 2px solid #000; /* Black border */
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f9f9f9; /* Light grey background */
-  width: 90%; /* Default width */
-  max-width: 600px; /* Maximum width */
-  margin: 20px auto; /* Center horizontally and add top margin */
-}
+    .rankings, .matches {
+      border: 2px solid #000; /* Black border */
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9; /* Light grey background */
+      width: 90%; /* Default width */
+      max-width: 600px; /* Maximum width */
+      margin: 20px auto; /* Center horizontally and add top margin */
+    }
 
-.rankings {
-  text-align: center;
-}
+    .rankings {
+      text-align: center;
+    }
 
-.match-title, .ranking-title {
-  font-size: 28px; /* Increase font size */
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+    .match-title, .ranking-title {
+      font-size: 28px; /* Increase font size */
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.match-data, .ranking-data {
-  font-size: 24px; /* Increase font size */
-  margin-bottom: 20px;
-}
+    .match-data, .ranking-data {
+      font-size: 24px; /* Increase font size */
+      margin-bottom: 20px;
+    }
 
-.ranking-status {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+    .ranking-status {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
 
-.ranking-item {
-  width: 45%;
-}
+    .ranking-item {
+      width: 45%;
+    }
 
-.centered-image {
-  display: flex;
-  justify-content: center;
-    margin: 20px auto;
-}
+    .centered-image {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+    }
 
-.centered-image .col-md-6 {
-  max-width: 600px; /* Ensure the image container has the same maximum width */
-  width: 100%; /* Ensure the image container takes full width */
-}
+    .centered-image .col-md-6 {
+      max-width: 600px; /* Ensure the image container has the same maximum width */
+      width: 100%; /* Ensure the image container takes full width */
+    }
 
-.img-fluid.alt-img {
-  width: 100%; /* Ensure the image takes full width of the container */
-  height: auto;
-}
+    .img-fluid.alt-img {
+      width: 100%; /* Ensure the image takes full width of the container */
+      height: auto;
+    }
 
-@media (max-width: 768px) {
-  .matches, .rankings {
-    width: 90%; /* Adjust width for smaller screens */
-    margin: 20px auto; /* Add margin between sections */
-  }
-  .match-title, .match-data, .ranking-title, .ranking-data {
-    font-size: 22px; /* Adjust font size for smaller screens */
-  }
-  .ranking-status {
-    flex-direction: column;
-    align-items: center;
-  }
-  .ranking-item {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
+    @media (max-width: 768px) {
+      .matches, .rankings {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 20px auto; /* Add margin between sections */
+      }
+      .match-title, .match-data, .ranking-title, .ranking-data {
+        font-size: 22px; /* Adjust font size for smaller screens */
+      }
+      .ranking-status {
+        flex-direction: column;
+        align-items: center;
+      }
+      .ranking-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body id="body">
@@ -172,32 +172,13 @@
     </div>
   </section>
 
-<div class="centered-image">
-  <div class="col-md-6">
-    <img src="images/dualmeet.png" alt="Eagle Open Tournament" class="img-fluid alt-img">
+  <div class="centered-image">
+    <div class="col-md-6">
+      <img src="images/dualmeet.png" alt="Eagle Open Tournament" class="img-fluid alt-img">
+    </div>
   </div>
-</div>
 
   <div class="center-container">
-    <section class="rankings">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="section-subtitle" style="text-align: center;">Team Points</h2>
-            <div class="row justify-content-center">
-              <div id="ranking-1" class="ranking-status col-md-6">
-                <h3 class="ranking-title">UWL</h3>
-                <p id="ranking-1-points" class="ranking-data"></p>
-              </div>
-              <div id="ranking-2" class="ranking-status col-md-6">
-                <h3 class="ranking-title">UWW</h3>
-                <p id="ranking-2-points" class="ranking-data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="matches">
       <div class="container">
         <div class="row">
@@ -214,6 +195,20 @@
             <div id="in-the-hole" class="match-status">
               <h3 class="match-title">In the Hole:</h3>
               <p id="in-the-hole-data" class="match-data"></p>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rankings">
+                  <h2 class="section-subtitle" style="text-align: center;">-175</h2>
+                  <div id="leaderboard-minus-175"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="rankings">
+                  <h2 class="section-subtitle" style="text-align: center;">+175</h2>
+                  <div id="leaderboard-plus-175"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -251,26 +246,48 @@
       }
     }
 
-    async function fetchRankingData() {
+    async function fetchLeaderboardData() {
       const apiKey = 'AIzaSyDmIpI9B5bVHWpOqVo4BDTVpMBWEeghyeA';
       const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
-      const range = 'Sheet1!F6:G11';
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+
+      // Fetch -175 leaderboard data
+      const rangeMinus175 = 'Sheet1!F6:G10';
+      const urlMinus175 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeMinus175}?key=${apiKey}`;
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const values = data.values;
-        for (let i = 0; i < values.length; i++) {
-          document.getElementById(`ranking-${i+1}-points`).innerText = values[i][1];
+        const responseMinus175 = await fetch(urlMinus175);
+        const dataMinus175 = await responseMinus175.json();
+        const valuesMinus175 = dataMinus175.values;
+        let leaderboardMinus175Html = '<ul>';
+        for (let i = 0; i < valuesMinus175.length; i++) {
+          leaderboardMinus175Html += `<li>${valuesMinus175[i][0]}: ${valuesMinus175[i][1]}</li>`;
         }
+        leaderboardMinus175Html += '</ul>';
+        document.getElementById('leaderboard-minus-175').innerHTML = leaderboardMinus175Html;
       } catch (error) {
-        console.error('Error fetching data from Google Sheets:', error);
+        console.error('Error fetching -175 leaderboard data from Google Sheets:', error);
+      }
+
+      // Fetch +175 leaderboard data
+      const rangePlus175 = 'Sheet1!I6:J12';
+      const urlPlus175 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangePlus175}?key=${apiKey}`;
+      try {
+        const responsePlus175 = await fetch(urlPlus175);
+        const dataPlus175 = await responsePlus175.json();
+        const valuesPlus175 = dataPlus175.values;
+        let leaderboardPlus175Html = '<ul>';
+        for (let i = 0; i < valuesPlus175.length; i++) {
+          leaderboardPlus175Html += `<li>${valuesPlus175[i][0]}: ${valuesPlus175[i][1]}</li>`;
+        }
+        leaderboardPlus175Html += '</ul>';
+        document.getElementById('leaderboard-plus-175').innerHTML = leaderboardPlus175Html;
+      } catch (error) {
+        console.error('Error fetching +175 leaderboard data from Google Sheets:', error);
       }
     }
 
-    // Call the functions to fetch and display match data and ranking data
+    // Call the functions to fetch and display match data and leaderboard data
     fetchMatchData();
-    fetchRankingData();
+    fetchLeaderboardData();
   </script>
   <script>
     window.__ow = window.__ow || {};
