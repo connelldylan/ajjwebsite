@@ -251,7 +251,7 @@
       const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
 
       // Fetch -175 leaderboard data
-      const rangeMinus175 = 'Sheet1!F6:G10';
+      const rangeMinus175 = 'Sheet1!F6:G12';
       const urlMinus175 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeMinus175}?key=${apiKey}`;
       try {
         const responseMinus175 = await fetch(urlMinus175);
