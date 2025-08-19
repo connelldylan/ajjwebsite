@@ -178,43 +178,17 @@
     </div>
   </div>
 
-  <div class="center-container">
-    <section class="matches">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="section-subtitle" style="text-align: center;">Match Status</h2>
-            <div id="current-match" class="match-status">
-              <h3 class="match-title">Current Match:</h3>
-              <p id="current-match-data" class="match-data"></p>
-            </div>
-            <div id="on-deck" class="match-status">
-              <h3 class="match-title">On Deck:</h3>
-              <p id="on-deck-data" class="match-data"></p>
-            </div>
-            <div id="in-the-hole" class="match-status">
-              <h3 class="match-title">In the Hole:</h3>
-              <p id="in-the-hole-data" class="match-data"></p>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="rankings">
-                  <h2 class="section-subtitle" style="text-align: center;">-175</h2>
-                  <div id="leaderboard-minus-175"></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="rankings">
-                  <h2 class="section-subtitle" style="text-align: center;">+175</h2>
-                  <div id="leaderboard-plus-175"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+  <footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="copyright mb-0">Copyright 2024 &copy; La Crosse American Jiu Jitsu LLC. All rights reserved.
+					<br> Contact: info@lacrosseajj.com
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
   <div id="scroll-to-top" class="scroll-to-top">
     <span class="icon ion-ios-arrow-up"></span>
@@ -228,67 +202,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
   <script src="plugins/google-map/map.js"></script>
   <script src="js/script.js"></script>
-  <script>
-    async function fetchMatchData() {
-      const apiKey = 'AIzaSyDmIpI9B5bVHWpOqVo4BDTVpMBWEeghyeA';
-      const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
-      const range = 'Sheet1!A3:C3';
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const values = data.values[0];
-        document.getElementById('current-match-data').innerText = values[0];
-        document.getElementById('on-deck-data').innerText = values[1];
-        document.getElementById('in-the-hole-data').innerText = values[2];
-      } catch (error) {
-        console.error('Error fetching data from Google Sheets:', error);
-      }
-    }
-
-    async function fetchLeaderboardData() {
-      const apiKey = 'AIzaSyDmIpI9B5bVHWpOqVo4BDTVpMBWEeghyeA';
-      const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
-
-      // Fetch -175 leaderboard data
-      const rangeMinus175 = 'Sheet1!F6:G12';
-      const urlMinus175 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeMinus175}?key=${apiKey}`;
-      try {
-        const responseMinus175 = await fetch(urlMinus175);
-        const dataMinus175 = await responseMinus175.json();
-        const valuesMinus175 = dataMinus175.values;
-        let leaderboardMinus175Html = '<ul>';
-        for (let i = 0; i < valuesMinus175.length; i++) {
-          leaderboardMinus175Html += `<li>${valuesMinus175[i][0]}: ${valuesMinus175[i][1]}</li>`;
-        }
-        leaderboardMinus175Html += '</ul>';
-        document.getElementById('leaderboard-minus-175').innerHTML = leaderboardMinus175Html;
-      } catch (error) {
-        console.error('Error fetching -175 leaderboard data from Google Sheets:', error);
-      }
-
-      // Fetch +175 leaderboard data
-      const rangePlus175 = 'Sheet1!I6:J12';
-      const urlPlus175 = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangePlus175}?key=${apiKey}`;
-      try {
-        const responsePlus175 = await fetch(urlPlus175);
-        const dataPlus175 = await responsePlus175.json();
-        const valuesPlus175 = dataPlus175.values;
-        let leaderboardPlus175Html = '<ul>';
-        for (let i = 0; i < valuesPlus175.length; i++) {
-          leaderboardPlus175Html += `<li>${valuesPlus175[i][0]}: ${valuesPlus175[i][1]}</li>`;
-        }
-        leaderboardPlus175Html += '</ul>';
-        document.getElementById('leaderboard-plus-175').innerHTML = leaderboardPlus175Html;
-      } catch (error) {
-        console.error('Error fetching +175 leaderboard data from Google Sheets:', error);
-      }
-    }
-
-    // Call the functions to fetch and display match data and leaderboard data
-    fetchMatchData();
-    fetchLeaderboardData();
-  </script>
   <script>
     window.__ow = window.__ow || {};
     window.__ow.organizationId = "27d5823a-26ec-4d21-92c2-e0842bd4634f";
